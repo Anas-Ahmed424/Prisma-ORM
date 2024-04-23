@@ -1,4 +1,6 @@
 import 'dotenv/config';
+import authenticateToken from "./middleware/authorization.js"
+
 
 import express from 'express';
 const app = express();
@@ -11,6 +13,9 @@ app.use(express.urlencoded({ extended : false}));
 app.get("/", (req,res) => {
     return res.send("Hi Everyone.")
 });
+
+app.use(authenticateToken)
+
 
 // * Routes file
 import routes from './routes/index.js'

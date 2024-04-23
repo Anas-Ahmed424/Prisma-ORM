@@ -3,11 +3,12 @@ import { createUser, updateUser, fetchUsers, showUser, deleteUser } from '../Con
 
 const router = Router()
 
-router.post('/', createUser);
+router.post('/adduser', createUser);
 router.post('/:id', updateUser);
 router.get('/', fetchUsers);
 router.get('/:id', showUser);
 router.delete('/:id', deleteUser);
+
 
 
 
